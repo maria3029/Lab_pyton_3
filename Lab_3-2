@@ -1,0 +1,18 @@
+# Створіть функцію, яка визначає кількість слів у заданому рядку,n використовуючи лише класичні інструкції мови Python, властивістьnlength та доступ до символу через індекс.
+
+print("Введіть рядок, для якого потрібно визначити кількість слів:")
+input_string = input()
+def count_words(s):
+    count = 0
+    in_word = False
+    
+    for i in range(len(s)):
+        if s[i] != ' ' and not in_word:
+            count += 1
+            in_word = True
+        elif s[i] == ' ':
+            in_word = False
+            
+    return count
+
+print(count_words(input_string))
