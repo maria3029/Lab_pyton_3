@@ -1,0 +1,12 @@
+# Напишіть рекурсивний розв’язок задачі про Ханойські вежі для числа n < 6. У консоль виведіть текстову послідовність кроків.
+def hanoi(n, source, target, auxiliary):
+    if n == 1:
+        print(f"Перемістіть диск 1 з {source} на {target}")
+        return
+    hanoi(n-1, source, auxiliary, target)
+    print(f"Перемістіть диск {n} з {source} на {target}")
+    hanoi(n-1, auxiliary, target, source)
+
+print("Введіть число дисків:")
+n = int(input())
+hanoi(n, 'A', 'C', 'B')
